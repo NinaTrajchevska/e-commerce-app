@@ -1,4 +1,3 @@
-// src/app/product-listings/product-listings.component.ts
 import { Component, OnInit } from '@angular/core';
 import { GraphqlService } from '../graphql.service';
 
