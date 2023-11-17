@@ -17,14 +17,7 @@ export class GraphqlService {
               id
               name
               description
-              variants {
-                id
-                priceWithTax {
-                  value
-                  currencyCode
-                }
-              }
-            }
+                        }
           }
         }
       `,
