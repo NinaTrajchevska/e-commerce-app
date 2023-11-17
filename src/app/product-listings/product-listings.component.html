@@ -1,0 +1,9 @@
+<!-- src/app/product-listings/product-listings.component.html -->
+<div *ngFor="let product of products" class="product-card">
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.description }}</p>
+    <p>Price: {{ product.variants[0].priceWithTax.value }} {{ product.variants[0].priceWithTax.currencyCode }}</p>
+  
+    <!-- Add more styling and UI elements as needed -->
+  </div>
+  

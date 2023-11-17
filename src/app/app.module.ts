@@ -3,14 +3,31 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GraphQLModule } from './graphql.module';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductListingsComponent } from './product-listings/product-listings.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { OrderDetailsComponent } from './order-details/order-details.component';
+
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProductListingsComponent,
+    ProductDetailsComponent,
+    OrderDetailsComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    GraphQLModule,
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
