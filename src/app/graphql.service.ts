@@ -1,4 +1,4 @@
-
+// src/app/graphql.service.ts
 import { Injectable } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
 
@@ -17,10 +17,29 @@ export class GraphqlService {
               id
               name
               description
-                        }
+            }
           }
         }
       `,
     }).valueChanges;
   }
+
+  getProductById(productId: string) {
+    return this.apollo.watchQuery({
+      query: gql`
+        query ProductById($productId: ID!) {
+          product(id: $productId) {
+            id
+            name
+            description
+          }
+        }
+      `,
+      variables: {
+        productId,
+      },
+    }).valueChanges;
+    
+  }
+
 }
