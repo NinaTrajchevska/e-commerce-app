@@ -1,8 +1,8 @@
 <div *ngFor="let product of products">
     <h3>{{ product.name }}</h3>
     <p>{{ product.description }}</p>
-    
+  
     <button mat-button [routerLink]="'/products/' + product.id">View Details</button>
-    <button mat-button (click)="addToCart(product.id)">Add to Cart</button>
+    <button mat-button (click)="addToCart(product)">Add to Cart</button>
   </div>
   

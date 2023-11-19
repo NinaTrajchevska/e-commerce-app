@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GraphqlService } from '../graphql.service';
 import { Router } from '@angular/router';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-product-listings',
@@ -10,7 +11,11 @@ import { Router } from '@angular/router';
 export class ProductListingsComponent implements OnInit {
   products: any[] = [];
 
-  constructor(private graphqlService: GraphqlService, private router: Router) {}
+  constructor(
+    private graphqlService: GraphqlService,
+    private router: Router,
+    private cartService: CartService
+  ) {}
 
   ngOnInit(): void {
     this.graphqlService.getProducts().subscribe(({ data }: any) => {
@@ -18,7 +23,8 @@ export class ProductListingsComponent implements OnInit {
     });
   }
 
-  addToCart(productId: string): void {
-    console.log('Added to cart:', productId);
+  addToCart(product: any): void {
+    this.cartService.addToCart(product);
+    this.router.navigate(['/cart']);
   }
 }

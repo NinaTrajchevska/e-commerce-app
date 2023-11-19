@@ -1,4 +1,3 @@
-// src/app/graphql.service.ts
 import { Injectable } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
 
